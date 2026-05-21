@@ -1,4 +1,4 @@
-# 🌐 Networking Mastery Roadmap — Zero to Expert
+# Networking Mastery Roadmap — Zero to Expert
 
 > **Goal:** Understand, edit, rework, and design networking in real applications — from the first cable to cloud-scale infrastructure.
 
@@ -46,12 +46,12 @@
 - [ ] Converting decimal ↔ binary by hand for small numbers (e.g., 192 = `11000000`).
 - [ ] Hexadecimal: base 16, used for MAC addresses and memory. `FF` = 255.
 
-### 🎯 Milestone: Setup & Explore
+### Milestone: Setup & Explore
 > Run `ping google.com`, `traceroute google.com`, and `dig google.com` from your terminal. Write down what every line of output means. You should understand every number.
 
 ---
 
-## Phase 1: Core Packet Mechanics & Routing 🌐
+## Phase 1: Core Packet Mechanics & Routing 
 > *How data actually travels from A to B across the internet.*
 
 ### Physical & Data Link Layers
@@ -101,12 +101,12 @@
 - [ ] **NAT Table:** the router maintains a state table mapping `{private_IP:private_port}` ↔ `{public_IP:public_port}`. Essential for understanding firewall rules.
 - [ ] **NAT Traversal:** the reason peer-to-peer apps (games, video calls) need special techniques (STUN, TURN, ICE) to punch through NAT.
 
-### 🎯 Milestone: Build a Subnet Calculator
+### Milestone: Build a Subnet Calculator
 > Write a CLI tool in any language that takes an IP and CIDR (e.g., `192.168.50.0/22`) and outputs: Network ID, Broadcast, first/last usable host, and total usable hosts. Then diagram what PAT looks like for 3 devices behind one router.
 
 ---
 
-## Phase 2: Transport & Session Control 📦
+## Phase 2: Transport & Session Control
 > *How TCP makes the internet reliable, and when to throw that reliability away.*
 
 ### TCP Deep Dive
@@ -169,12 +169,12 @@
 - [ ] **FD Limits:** `ulimit -n` controls max open FDs per process. On a busy server with 10,000 connections, you need to raise this. Default is often 1024.
 - [ ] **`select()`:** the original I/O multiplexer. Pass three FD sets (read/write/except). Returns which FDs are ready. Problem: O(n) scan, 1024 FD limit.
 
-### 🎯 Milestone: Build a TCP Echo Server & Client
+### Milestone: Build a TCP Echo Server & Client
 > In Python or C, build a server that accepts connections and echoes back whatever the client sends. Then extend it: handle multiple clients using `select()`. Check with `netstat` or `ss` that your connections are in `ESTABLISHED` state. Observe `TIME_WAIT` after closing.
 
 ---
 
-## Phase 3: Application Protocols & Structuring Bytes 🗣️
+## Phase 3: Application Protocols & Structuring Bytes
 > *How applications agree on what the bytes mean.*
 
 ### DNS Architecture
@@ -249,7 +249,7 @@
 - [ ] **gRPC:** Google's RPC framework. Uses Protobuf + HTTP/2. Supports unary (req-res), server streaming, client streaming, bidirectional streaming.
 - [ ] **Why gRPC over REST for internal services:** strongly typed contracts, automatic code generation, streaming built-in, smaller payloads.
 
-### 🎯 Milestone: HTTP from Scratch
+### Milestone: HTTP from Scratch
 > Using only raw TCP sockets (no HTTP library), write a program that: (1) connects to a real website, (2) sends a valid HTTP/1.1 GET request manually, (3) parses the response status code and headers, (4) prints the body. Then, sniff the TLS handshake of any HTTPS connection in Wireshark — identify the ClientHello and ServerHello packets.
 
 ---
