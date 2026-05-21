@@ -13,7 +13,7 @@
 
 ---
 
-## Phase 0: Before You Write a Single Line of Code 🧱
+## Phase 0: Before You Write a Single Line of Code
 > *Absolute zero. If you already know what an IP address is and how to ping something, skim this.*
 
 ### The Mental Model
